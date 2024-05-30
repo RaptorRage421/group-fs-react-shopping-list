@@ -11,6 +11,7 @@ import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 
 import Header from '../Header/Header.jsx'
 import './App.css';
+import ShoppingItem from '../ShoppingList/ShoppingList.jsx';
 
 function App() {
 
@@ -53,6 +54,7 @@ const addItem = (newItem) => {
 
             <main>
                 <p>Under Construction....</p>
+                <ShoppingList />
             </main>
         </div>
     );
