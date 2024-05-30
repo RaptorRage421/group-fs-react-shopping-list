@@ -15,6 +15,8 @@ router.get('/', (req,res) => {
     })
     .catch((err)=> {
         console.error('Error in GET for /api/shoppinglist', err)
+        //in a get request need to add a sendStatus to the catch
+        //
         res.sendStatus(500)
     })
 
@@ -31,6 +33,7 @@ router.post('/', (req,res) => {
     pool.query(queryText, [item.name, item.quantity, item.unit])
     .then((results) => {
         res.sendStatus(201)
+        //need to add a sendstatus the result for the put route 
     })
     .catch((err) => {
         console.error("error in post for /api/shoppinglist", err)
