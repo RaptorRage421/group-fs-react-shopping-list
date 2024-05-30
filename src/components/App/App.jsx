@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
+import AddItemForm from '../AddItemForm/AddItemForm.jsx';
+
 import Header from '../Header/Header.jsx'
 import './App.css';
-
 
 function App() {
 
@@ -41,7 +42,8 @@ const addItem = (newItem) => {
     return (
         <div className="App">
             <Header />
-            <ShoppingForm addItem={addItem}/>
+
+            <AddItemForm />
 
             <main>
                 <p>Under Construction....</p>
