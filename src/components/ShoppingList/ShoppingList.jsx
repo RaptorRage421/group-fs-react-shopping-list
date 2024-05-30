@@ -10,7 +10,7 @@ function ShoppingList(props) {
             //if the prop is named something else
             props.shoppingItem.map((shoppingItem) => (
               <li key={shoppingItem.id}>
-               <ShoppingItem />
+                The {shoppingItem.name} originated in {shoppingItem.origin}.
               </li>
             ))
           }

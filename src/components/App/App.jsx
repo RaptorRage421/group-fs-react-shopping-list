@@ -54,7 +54,11 @@ const addItem = (newItem) => {
 
             <main>
                 <p>Under Construction....</p>
+<<<<<<< HEAD
                 <ShoppingList />
+=======
+                <ShoppingList items={items}/>
+>>>>>>> sams-branch
             </main>
         </div>
     );
