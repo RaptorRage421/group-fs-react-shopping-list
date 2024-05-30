@@ -1,5 +1,6 @@
 import React from 'react';
 import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import Header from '../Header/Header.jsx'
 import './App.css';
 
