@@ -41,7 +41,7 @@ const addItem = (newItem) => {
     return (
         <div className="App">
             <Header />
-            <ShoppingForm />
+            <ShoppingForm addItem={addItem}/>
 
             <main>
                 <p>Under Construction....</p>
