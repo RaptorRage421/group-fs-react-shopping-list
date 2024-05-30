@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const shoppingRouter = require('./shoppingRouter.js')
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5001;
 
