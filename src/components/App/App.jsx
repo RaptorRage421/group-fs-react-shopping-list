@@ -45,6 +45,7 @@ const addItem = (newItem) => {
 
             <main>
                 <p>Under Construction....</p>
+                <ShoppingList items={items}/>
             </main>
         </div>
     );
