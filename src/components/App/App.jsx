@@ -1,14 +1,13 @@
 import React from 'react';
-import ShoppingForm from '../ShoppingForm/ShoppingForm.jsx';
+import AddItemForm from '../AddItemForm/AddItemForm.jsx';
 import Header from '../Header/Header.jsx'
 import './App.css';
-
 
 function App() {
     return (
         <div className="App">
             <Header />
-            <ShoppingForm />
+            <AddItemForm />
             <main>
                 <p>Under Construction....</p>
             </main>
