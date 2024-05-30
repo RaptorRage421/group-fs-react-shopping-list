@@ -43,9 +43,10 @@ router.post('/', (req,res) => {
 })
 
 router.delete('/:id', (req,res) =>{
+    console.log("DELETE REQ.PARAM.ID", req.params.id)
     const queryText = `
     DELETE FROM "shoppinglist"
-    WHERE id = $1;
+    WHERE "id" = $1;
     `
     pool.query(queryText, [req.params.id])
         .then((results) => {
