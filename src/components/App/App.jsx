@@ -67,15 +67,42 @@ const addItems = (newItem) => {
       });
   };
 
+
+  const setPurchasedFalse = () => {
+    console.log("in setPurchasedFalse")
+    axios.put('/api/shoppinglist', {purchased: false})
+    .then(()=>{
+        getItems()
+    })
+    .catch((err)=> {
+        console.error("error marking all as not purchased", err)
+    })
+
+  }
+
+  const deleteEverything = () => {
+    console.log("DELETING EVERYTHING")
+    axios.delete('/api/shoppinglist')
+    .then(() => {
+        getItems()
+    })
+    .catch((err) => {
+        console.error("error deleting everything", err)
+    })
+
+  }
     return (
         <div className="App">
             <Header />
-
+        <h2>Add an Item</h2>
             <AddItemForm addItems={addItems}/>
 
             <main>
+         <h2>Shopping List</h2>
             <ShoppingList 
             items={items}
+            setPurchasedFalse={setPurchasedFalse}
+            deleteEverything={deleteEverything}
             handleRemoveItem={handleRemoveItem}
             handleMarkAsPurchased={handleMarkAsPurchased}
             />
