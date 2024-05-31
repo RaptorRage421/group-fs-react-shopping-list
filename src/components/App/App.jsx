@@ -94,11 +94,10 @@ const addItems = (newItem) => {
     return (
         <div className="App">
             <Header />
-        <h2>Add an Item</h2>
+
             <AddItemForm addItems={addItems}/>
 
             <main>
-         <h2>Shopping List</h2>
             <ShoppingList 
             items={items}
             setPurchasedFalse={setPurchasedFalse}
