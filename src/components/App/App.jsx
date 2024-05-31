@@ -34,9 +34,11 @@ axios.get('/api/shoppinglist')
 }
 
 
-const addItem = (newItem) => {
+const addItems = (newItem) => {
     axios.post('/api/shoppinglist', newItem)
+    
       .then(() => {
+        console.log("New Item", newItem)
         getItems()
       })
       .catch(err => {
@@ -44,21 +46,39 @@ const addItem = (newItem) => {
       });
   };
 
+  const handleRemoveItem = (id) => {
+    axios
+      .delete(`/api/shoppinglist/${id}`)
+      .then(() => {
+       getItems()
+      })
+      .catch((error) => {
+        console.error("Error removing item:", error);
+      });
+  };
 
+  const handleMarkAsPurchased = (id) => {
+    axios.put(`/api/shoppinglist/${id}`, { purchased: true })
+      .then(() => {
+          getItems()
+      })
+      .catch((error) => {
+          console.error("Error marking item as purchased:", error);
+      });
+  };
 
     return (
         <div className="App">
             <Header />
 
-            <AddItemForm />
+            <AddItemForm addItems={addItems}/>
 
             <main>
-                <p>Under Construction....</p>
-<<<<<<< HEAD
-                <ShoppingList />
-=======
-                <ShoppingList items={items}/>
->>>>>>> sams-branch
+            <ShoppingList 
+            items={items}
+            handleRemoveItem={handleRemoveItem}
+            handleMarkAsPurchased={handleMarkAsPurchased}
+            />
             </main>
         </div>
     );
