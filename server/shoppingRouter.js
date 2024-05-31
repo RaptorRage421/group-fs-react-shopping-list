@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', (req,res) => {
     const queryText = `
     SELECT * FROM "shoppinglist"
-        ORDER BY "name" DESC ;
+        ORDER BY "name";
     `
 
     pool.query(queryText)
@@ -56,6 +56,54 @@ router.delete('/:id', (req,res) =>{
             console.error('Issue with the DELETE', err)
         })
 
+})
+
+
+router.put('/:id', (req,res) => {
+    const isPurchased = req.body.purchased
+
+    const queryText = `
+    UPDATE "shoppinglist"
+    SET "purchased" = $1
+    WHERE "id" = $2
+    `
+
+    pool.query(queryText,[isPurchased, req.params.id])
+    .then((results) => {
+        res.sendStatus(200)
+    })
+    .catch((err) => {
+        console.error("error in mark purchased", err)
+    })
+})
+
+router.put('/', (req,res) => {
+const queryText = `
+UPDATE "shoppinglist"
+SET "purchased" = $1
+`
+pool.query(queryText, [req.body.purchased])
+    .then((results) => {
+        res.sendStatus(200)
+    })
+    .catch((err) => {
+        console.error("error in set all unpurchased", err)
+    })
+
+
+})
+
+router.delete('/', (req,res) => {
+    const queryText = `
+    DELETE FROM "shoppinglist"
+    `
+pool.query(queryText)
+.then((results) => {
+    res.sendStatus(200)
+})
+.catch((err) => {
+    console.error("error deleting everything", err)
+})
 })
 
 module.exports = router

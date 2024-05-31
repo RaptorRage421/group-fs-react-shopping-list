@@ -8,7 +8,7 @@ CREATE TABLE "shoppinglist"
 	"name" VARCHAR(80) NOT NULL,
 	"quantity" DECIMAL NOT NULL,
 	"unit" VARCHAR(20),
-	"purcharsed" BOOLEAN DEFAULT FALSE
+	"purchased" BOOLEAN DEFAULT FALSE
 );
 
 

@@ -1,22 +1,17 @@
-function ShoppingItem(props) {
+import React from "react";
+import ShoppingItem from "../ShoppingItem/ShoppingItem";
 
-    return (
-      <>
-        <h2>All Creatures</h2>
-        <ul>
-          {
+const ShoppingList = ({ items, handleRemoveItem, handleMarkAsPurchased , setPurchasedFalse, deleteEverything}) => {
+  return (
+    <div>
+        <button onClick={setPurchasedFalse}>RESET</button>
+        <button onClick={deleteEverything}>Delete!</button>
+        
+      {items.map((item) => (
+        <ShoppingItem key={item.id} item={item} handleRemoveItem={()=> handleRemoveItem(item.id)} handleMarkAsPurchased={() => handleMarkAsPurchased(item.id)}/>
+      ))}
+    </div>
+  );
+};
 
-            //shoppingItem may be named something else 
-            //if the prop is named something else
-            props.shoppingItem.map((shoppingItem) => (
-              <li key={shoppingItem.id}>
-                The {shoppingItem.name} originated in {shoppingItem.origin}.
-              </li>
-            ))
-          }
-        </ul>
-      </>
-    );
-  
-}
-export default ShoppingItem ;
+export default ShoppingList;
