@@ -1,35 +1,21 @@
 import App from "../App/App";
 import React from "react";
-import axios from "axios";
+import './ShoppingItem.css'
 
-const ShoppingItem = ({ item, handleRemoveItem }) => {
-  const { id, name, quantity, unit, purchased } = item;
-
-  const handleMarkAsPurchased = () => {
-    axios
-      .put(`/api/shoppinglist/${id}`, { purchased: true })
-      .then(() => {
-      })
-      .catch((error) => {
-        console.error("Error marking item as purchased:", error);
-      });
-  };
-
-
+const ShoppingItem = ({ item, handleRemoveItem, handleMarkAsPurchased }) => {
+  const { name, quantity, unit } = item;
 
   return (
     <div>
-      <span>Name: {name}</span>
+      <span className="padding">Name: {name}</span>
       <span>Quantity: {quantity}</span>
       {unit && <span>Unit: {unit}</span>}
-      {purchased ? (
-        <span>Purchased</span>
-      ) : (
+      
         <div>
           <button onClick={handleMarkAsPurchased}>Mark as Purchased</button>
           <button onClick={handleRemoveItem}>Remove</button>
         </div>
-      )}
+      
     </div>
   );
 };
