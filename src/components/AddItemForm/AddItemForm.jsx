@@ -2,7 +2,7 @@ import { useState } from "react";
 // import "./AddItemForm.css";
 import axios from "axios";
 
-function AddItemForm({ getItems })
+function AddItemForm({ addItems })
 //^this is props! 
 {  let [itemName, setItemName] = useState("");
   let [quantity, setQuantity] = useState("");
@@ -11,23 +11,16 @@ function AddItemForm({ getItems })
   const addItem = (event) => {
     console.log("Inside AddItemForm", itemName, quantity, unit);
     event.preventDefault();
-    axios
-      .post("/items", {
-        name: itemName,
-        quantity: quantity,
-        unit: unit,
-      })
-      .then((response) => {
-        console.log("Inside client response of post request");
-        getItems();
+
+ 
+   
+   addItems({ name: itemName, quantity: quantity, unit: unit})
+
         setItemName("");
         setQuantity("");
         setUnit("");
-      })
-      .catch((error) => {
-        console.log("Error in client side of post request:", error);
-      });
-  };
+      }
+      
   return (
     <section>
       <form onSubmit={addItem}>

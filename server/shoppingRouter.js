@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', (req,res) => {
     const queryText = `
     SELECT * FROM "shoppinglist"
-        ORDER BY "name" DESC ;
+        ORDER BY "name";
     `
 
     pool.query(queryText)
@@ -58,4 +58,22 @@ router.delete('/:id', (req,res) =>{
 
 })
 
+
+router.put('/:id', (req,res) => {
+    const isPurchased = req.body.purchased
+
+    const queryText = `
+    UPDATE "shoppinglist"
+    SET "purchased" = $1
+    WHERE "id" = $2
+    `
+
+    pool.query(queryText,[isPurchased, req.params.id])
+    .then((results) => {
+        res.sendStatus(200)
+    })
+    .catch((err) => {
+        console.error("error in mark purchased", err)
+    })
+})
 module.exports = router
