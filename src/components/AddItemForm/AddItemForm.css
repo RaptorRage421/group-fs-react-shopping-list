@@ -1,37 +1,57 @@
-/* styles.css */
+/* AddItemForm.css */
 
-/* Style for the form section */
-section {
-    margin-bottom: 20px; /* Add some space below the form */
+/* Section styling */
+.addItemForm {
+    max-width: 400px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
   }
   
-  /* Style for labels */
-  label {
-    display: block; /* Make labels display in a block */
-    margin-bottom: 5px; /* Add some space below each label */
+  /* Form styling */
+  .addItemForm form {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 40px; /* Add padding */
+    border-radius: 8px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   }
   
-  /* Style for inputs */
-  input {
-    width: 100%; /* Make inputs take full width of their container */
-    padding: 8px; /* Add some padding to inputs */
-    margin-bottom: 10px; /* Add some space below each input */
-    border: 1px solid #ccc; /* Add a border to inputs */
-    border-radius: 4px; /* Add some border radius for rounded corners */
+  /* Label styling */
+  .addItemForm label {
+    color: #333; /* Dark text color */
+    font-size: 18px; /* Set font size */
   }
   
-  /* Style for the submit button */
-  button {
-    padding: 10px 20px; /* Add padding to the button */
-    background-color: #007bff; /* Set background color */
-    color: #fff; /* Set text color */
+  /* Input styling */
+  .addItemForm input {
+    width: calc(100% - 40px); /* Calculate input width */
+    padding: 12px; /* Add padding */
+    margin: 16px 0; /* Add margin */
     border: none; /* Remove border */
-    border-radius: 4px; /* Add some border radius for rounded corners */
-    cursor: pointer; /* Add cursor pointer */
+    border-bottom: 2px solid #555; /* Add bottom border */
+    background-color: transparent; /* Transparent background */
+    color: #333; /* Dark text color */
+    font-size: 16px; /* Set font size */
+    transition: border-color 0.3s; /* Add transition effect */
   }
   
-  /* Hover effect for the submit button */
-  button:hover {
-    background-color: #0056b3; /* Darken the background color on hover */
+  .addItemForm input:focus {
+    outline: none; /* Remove outline */
+    border-color: #00cc00; /* Change border color on focus */
+  }
+  
+  /* Button styling */
+  .addItemForm button {
+    width: 100%; /* Set button width */
+    padding: 12px; /* Add padding */
+    background-color: #555; /* Dark button background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add border radius */
+    font-size: 18px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+  }
+  
+  .addItemForm button:hover {
+    background-color: #00cc00; /* Change button background color on hover */
   }
   

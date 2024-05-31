@@ -1,5 +1,14 @@
+
+/* Header.css */
+
 .banner-header {
-  background-color: silver;
-  text-align: center;
-  padding: 0.25em;
+  background-color: #007bff; /* Set background color */
+  color: #fff; /* Set text color */
+  padding: 20px; /* Add padding */
+  text-align: center; /* Center-align text */
+}
+
+.banner-header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Set font size */
 }

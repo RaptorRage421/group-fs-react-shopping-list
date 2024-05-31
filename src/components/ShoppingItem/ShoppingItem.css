@@ -1,5 +1,37 @@
-.padding {
-    padding: 1em;
-    margin-bottom: 2em;
-    margin: 1em;
-}
+/* ShoppingItem.css */
+
+/* Container styling */
+.shopping-item {
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Add border radius */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add margin below each item */
+  }
+  
+  /* Styling for item details */
+  .item-details {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+  }
+  
+  /* Styling for item name */
+  .item-name {
+    font-weight: bold; /* Make the name bold */
+  }
+  
+  /* Styling for buttons */
+  button {
+    padding: 5px 10px; /* Add padding */
+    margin-right: 5px; /* Add margin between buttons */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+  }
+  
+  /* Hover effect for buttons */
+  button:hover {
+    background-color: #0056b3; /* Darken the background color on hover */
+  }
+  
