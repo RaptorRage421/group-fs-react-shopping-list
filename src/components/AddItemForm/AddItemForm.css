@@ -1,0 +1,37 @@
+/* styles.css */
+
+/* Style for the form section */
+section {
+    margin-bottom: 20px; /* Add some space below the form */
+  }
+  
+  /* Style for labels */
+  label {
+    display: block; /* Make labels display in a block */
+    margin-bottom: 5px; /* Add some space below each label */
+  }
+  
+  /* Style for inputs */
+  input {
+    width: 100%; /* Make inputs take full width of their container */
+    padding: 8px; /* Add some padding to inputs */
+    margin-bottom: 10px; /* Add some space below each input */
+    border: 1px solid #ccc; /* Add a border to inputs */
+    border-radius: 4px; /* Add some border radius for rounded corners */
+  }
+  
+  /* Style for the submit button */
+  button {
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add some border radius for rounded corners */
+    cursor: pointer; /* Add cursor pointer */
+  }
+  
+  /* Hover effect for the submit button */
+  button:hover {
+    background-color: #0056b3; /* Darken the background color on hover */
+  }
+  
