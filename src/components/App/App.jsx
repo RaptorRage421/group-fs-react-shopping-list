@@ -67,6 +67,30 @@ const addItems = (newItem) => {
       });
   };
 
+
+  const setPurchasedFalse = () => {
+    console.log("in setPurchasedFalse")
+    axios.put('/api/shoppinglist', {purchased: false})
+    .then(()=>{
+        getItems()
+    })
+    .catch((err)=> {
+        console.error("error marking all as not purchased", err)
+    })
+
+  }
+
+  const deleteEverything = () => {
+    console.log("DELETING EVERYTHING")
+    axios.delete('/api/shoppinglist')
+    .then(() => {
+        getItems()
+    })
+    .catch((err) => {
+        console.error("error deleting everything", err)
+    })
+
+  }
     return (
         <div className="App">
             <Header />
@@ -76,6 +100,8 @@ const addItems = (newItem) => {
             <main>
             <ShoppingList 
             items={items}
+            setPurchasedFalse={setPurchasedFalse}
+            deleteEverything={deleteEverything}
             handleRemoveItem={handleRemoveItem}
             handleMarkAsPurchased={handleMarkAsPurchased}
             />

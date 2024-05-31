@@ -76,4 +76,34 @@ router.put('/:id', (req,res) => {
         console.error("error in mark purchased", err)
     })
 })
+
+router.put('/', (req,res) => {
+const queryText = `
+UPDATE "shoppinglist"
+SET "purchased" = $1
+`
+pool.query(queryText, [req.body.purchased])
+    .then((results) => {
+        res.sendStatus(200)
+    })
+    .catch((err) => {
+        console.error("error in set all unpurchased", err)
+    })
+
+
+})
+
+router.delete('/', (req,res) => {
+    const queryText = `
+    DELETE FROM "shoppinglist"
+    `
+pool.query(queryText)
+.then((results) => {
+    res.sendStatus(200)
+})
+.catch((err) => {
+    console.error("error deleting everything", err)
+})
+})
+
 module.exports = router
