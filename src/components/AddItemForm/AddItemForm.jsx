@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import axios from "axios";
+import "./AddItemForm.css"
 
 function AddItemForm({ addItems })
 //^this is props! 
